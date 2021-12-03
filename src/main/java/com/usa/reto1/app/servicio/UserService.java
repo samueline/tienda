@@ -24,7 +24,7 @@ public class UserService {
     private UserRepository repository;
 
     // this method will return to us all the existent users
-    public List<User>getALL() {
+    public List<User>getAll() {
         return repository.getAll();
     }
 

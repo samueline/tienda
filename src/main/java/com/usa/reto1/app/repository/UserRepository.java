@@ -42,7 +42,7 @@ public class UserRepository {
 
    public boolean getUserByEmail(String email){
         Optional<User> user = repository.findByEmail(email);
-        return user.isEmpty();
+        return !user.isEmpty();
     }
 
     

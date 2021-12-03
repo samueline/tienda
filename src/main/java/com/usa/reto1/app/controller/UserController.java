@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("/api/user")
 @CrossOrigin(origins = "*")
 public class UserController {
 
@@ -26,14 +26,16 @@ public class UserController {
     // Esta parte es para que al ADMIN obtenga lista de los usuarios actuales
     @GetMapping("/all")
     public List<User> getUsers(){
-        return service.getALL();
+        return service.getAll();
     }
 
+   
+    
     // Esta parte se usa cuando el ADMIN va a crear un nuevo usuario
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody User user){
-        service.save(user);
+    public User save(@RequestBody User user){
+        return service.save(user);
     }
 
 
