@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
- * @author Carlos Caceres Ochoa
+ * @author samuel
  * interface operaciones mongodb capa de acceso a datos
  */
 public interface ProductoRepository extends MongoRepository<Producto,String>{

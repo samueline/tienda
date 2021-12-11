@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DELL
+ * @author samuel
  */
 @Service
 public class ProductoService {
@@ -33,12 +33,15 @@ public class ProductoService {
     }
     
     public Producto updateProducto(Producto producto){
-        Producto prodantiguo=getProducto(producto.getId());
-        prodantiguo.setNomprod(producto.getNomprod());
-        prodantiguo.setPrecio(producto.getPrecio());
-        prodantiguo.setCategoria(producto.getCategoria());
-        prodantiguo.setStock(producto.getStock());
-        prodantiguo.setDescripcion(producto.getDescripcion());
+        Producto prodantiguo=getProducto(producto.getReference());
+        prodantiguo.setBrand(producto.getBrand());
+        prodantiguo.setCategory(producto.getCategory());
+        prodantiguo.setDescription(producto.getDescription());
+        prodantiguo.setAvailability(true);
+        prodantiguo.setPrice(producto.getPrice());
+        prodantiguo.setQuantity(producto.getQuantity());
+        prodantiguo.setPhotography(producto.getPhotography());
+
         return repository.save(prodantiguo);
     }
     

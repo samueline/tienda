@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author DELL
+ * @author samuel
  */
 @RestController
 @CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.POST,
                                   RequestMethod.PUT,RequestMethod.DELETE})
-@RequestMapping("/api/Producto/")
+@RequestMapping("/api/vegetarian")
 public class ProductoController {
     
     @Autowired
@@ -39,10 +39,10 @@ public class ProductoController {
         return service.getProductos();
     }
     
-    @GetMapping("/{id}")
-    public Producto findProducto(@PathVariable String id){
-        return service.getProducto(id);
-    }
+//    @GetMapping("/{id}")
+//    public Producto findProducto(@PathVariable String id){
+//        return service.getProducto(id);
+//    }
     
     @PostMapping("/save")
     public ResponseEntity addProducto(@RequestBody Producto producto){

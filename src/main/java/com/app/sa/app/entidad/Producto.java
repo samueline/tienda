@@ -13,21 +13,34 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
- * @author Carlos Caceres Ochoa
- * Capa de datos
- * Clase de entidad mapeo con la base de datos
+ * @author samuel
+ 
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "producto")
 public class Producto {
-    @Id
-    private String id;
-    private String nomprod;
-    private int precio;
-    private String categoria;
-    private int stock;
-    private String descripcion;
+  
+
+
+
+@Id
+
+private String reference;
+
+private String brand;
+
+private String category;
+
+private String description;
+
+private boolean availability = true;
+
+private double price;
+
+private int quantity;
+
+private String photography;
     
 }
